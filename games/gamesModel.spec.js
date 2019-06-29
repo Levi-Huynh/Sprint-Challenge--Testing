@@ -101,11 +101,11 @@ const game= {genre:'RPG', releaseYear: 1998}
         });
  
         it('req body should have list of games', async() => {
-
+            const game1={title: 'Zelda', genre:'RPG', releaseYear: 1998}
             const game = { title: 'Zelda', genre:'RPG', releaseYear: 1998, id:1}
               
-             const res = await supertest(server).post('/games').send(game);
-            expect(res.body).toBe(game); 
+             const res = await supertest(server).post('/games').send(game1);
+            expect(res.body).toStrictEqual(game); 
             
              
                 }); 
